@@ -1,0 +1,260 @@
+:root {
+  --cor-principal: #0a66c2;
+  --cor-destaque: #f39c12;
+  --cor-whatsapp: #25d366;
+  --bg: #f5f7fa;
+  --text: #222;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* HEADER */
+header {
+  background: var(--cor-principal);
+  color: #fff;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+
+/* BOTÕES FIXOS */
+.header-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.header-buttons button,
+.header-buttons a {
+  background: var(--cor-principal);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.header-buttons button:hover,
+.header-buttons a:hover {
+  transform: scale(1.15);
+  background: var(--cor-destaque);
+}
+
+/* MAIN */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* SOBRE (MAIOR E MAIS DESTACADA) */
+.sobre {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+body.dark .sobre {
+  background: #1e1e1e;
+}
+
+.sobre h3 {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: var(--cor-principal);
+}
+
+/* CONTATOS */
+.lista-contatos {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.lista-contatos li {
+  margin-bottom: 14px;
+}
+
+/* WHATSAPP GRANDE + COR NO HOVER */
+.contato-whatsapp {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+}
+
+.contato-whatsapp i {
+  font-size: 1.35rem;
+  color: var(--cor-whatsapp);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contato-whatsapp:hover i {
+  transform: scale(1.3);
+  color: var(--cor-destaque);
+}
+
+/* GALERIAS */
+.ano {
+  margin-bottom: 30px;
+}
+
+.ano-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-left: 5px solid var(--cor-principal);
+  padding-left: 10px;
+}
+
+.ano-header h2 {
+  color: var(--cor-principal);
+}
+
+.ano-header i {
+  transition: transform 0.3s;
+}
+
+.ano-header i.aberto {
+  transform: rotate(180deg);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.galeria-fechada {
+  display: none;
+}
+
+.galeria img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 2000;
+}
+
+.modal-content {
+  display: block;
+  margin: 5% auto 0;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+#caption {
+  color: #fff;
+  text-align: center;
+  margin: 15px auto 0;
+  max-width: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
+
+/* BLOCO FOTO + EMPRESA */
+.bloco-parceria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px 0 40px;
+}
+
+.foto-parceria {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0,0,0,.25);
+}
+
+.sinal-mais {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-parceria {
+  width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.btn-instagram i {
+  color: #e1306c;
+}
+
+.header-buttons a:hover i {
+  color: #fff;
+}
